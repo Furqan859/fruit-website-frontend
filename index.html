@@ -1,256 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="/index.css">
-    <title>Buy Fruit</title>
-</head>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.2.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.2.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.2.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-<body>
-    <header>
-        <nav>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-            <div id="nav-div">
-                <a class="nav-menu" href="">Demo Pages</a>
-                <a class="nav-menu" href="">Watch Video</a>
-                <a class="nav-menu" href="">Blocks</a>
-
-                <a href="" class="nav-button" type="button" name="button">Buy Now</a>
-
-            </div>
-
-            <div id="nav-icon">
-                <img class="nav-pic" src="./pictures/logo1.jpg" alt="Nav-Icon" />
-
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div>
-            <div id="main-img-1">
-                <img class="imag-backgound" src="pictures/fruits-background-picture.jpg" alt="backgroung-img" />
-            </div>
-            <div id="para-text">
-                <p class="text-one">Patience is bitter, but its fruit is sweet....</p>
-                <p class="text-two">A tree is known by its fruit; a man by his deeds. A good deed is never lost; he w
-                </p>
-            </div>
-        </div>
-
-        <div id="container-box">
-            <div class="container-1"><img class="container-image-1"
-                    src="https://img.icons8.com/material/96/000000/scissors.png" />
-                <p class="container-text-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui at ut totam,
-                    fuga ad porro tenetur sunt
-                </p>
-            </div>
-            <div class="container-2"><img class="container-image-1"
-                    src="https://img.icons8.com/material/96/000000/paint--v1.png" />
-                <p class="container-text-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti delectus
-                    maiores temporibus
-            </div>
-            <div class="container-3"><img class="container-image-1"
-                    src="https://img.icons8.com/material/96/000000/fast-cart.png" />
-                <p class="container-text-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt nam ipsam
-                    porro </p>
-            </div>
-            <div class="container-4"><img class="container-image-1"
-                    src="https://img.icons8.com/ios/100/000000/smiling-face-with-heart.png" />
-                <p class="container-text-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci similique
-                    vel quisquam quo</p>
-            </div>
-        </div>
-
-        <div id=vegan-page>
-            <div class="vegan-p">
-                <p class="vegan-text-1">𝔣𝔯𝔢𝔰𝔥 𝔣𝔯𝔲𝔦𝔱</p>
-                <p>
-                    <h2 class="vegan-text-2">Our Vegan Store!</h2>
-                </p>
-                <p class="vegan-text-3">Radish Contains a lot of fiber, pectin and minerals salts</p>
-            </div>
-
-
-            <div>
-                <div id="vegan-main-div">
-                    <div><img class="vegan-camera-icon" src="./pictures/camera.jpg" alt="camera-icon" />
-                        <p class="vegan-main-div-p">Fresh Vegetables</p>
-                        <span class="vegan-main-div-span">USe for cooking severls types of vegetable</span>
-                    </div>
-
-                    <div>
-                        <img class="vegan-camera-icon" src="./pictures/rocket-icon.jpg" alt="rocket-icon" />
-                        <p class="vegan-main-div-p">Fresh Vegetables</p>
-                        <span class="vegan-main-div-span">USe for cooking severls types of vegetable</span>
-                    </div>
-
-                    <div>
-                        <img class="vegan-camera-icon" src="./pictures/sparrow-icon.png" alt="sparrow-icon" />
-                        <p class="vegan-main-div-p">Fresh Vegetables</p>
-                        <span class="vegan-main-div-span">USe for cooking severls types of vegetable</span>
-                    </div>
-                    <div>
-                        <img class="vegan-camera-icon" src="./pictures/chat-con.png" alt="chat-icon" />
-                        <p class="vegan-main-div-p">Fresh Vegetables</p>
-                        <span class="vegan-main-div-span">USe for cooking severls types of vegetable</span>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
-        <div id="vegan-div-2nd">
-            <div class="vegan-div-text-p">
-                <p class="vegan-text-1">𝖋𝖗𝖊𝖓𝖈𝖍 𝖋𝖗𝖚𝖎𝖙</p>
-                <h2 class="vegan-text-h2">Our Vegan Shop</h2>
-                <p class="vegan-text-h2-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nihil saepe
-                    voluptates? Provident, ex vel.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="main-div-boxes">
-            <div class="main-div-partions">
-                <div class=box-1><img class="box-image-1"
-                        src="https://lh3.googleusercontent.com/ogw/ADea4I6mrb1rGA6lhCMqHXF49KeVBiThXj2FfKiygddWfw=s32-c-mo"
-                        alt="profile-picture" />
-                    <p class="box-image-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima
-                        numquam alias voluptate
-                        quaerat itaque.</p>
-                    <h2 class="box-image-para-h2">VEROCINA KING</h2>
-                    <p class="box-image-para-h2-pa">Cook</p>
-                </div>
-                <div class=box-1><img class="box-image-1"
-                        src="https://lh3.googleusercontent.com/ogw/ADea4I6mrb1rGA6lhCMqHXF49KeVBiThXj2FfKiygddWfw=s32-c-mo"
-                        alt="profile-picture" />
-                    <p class="box-image-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima
-                        numquam alias voluptate
-                        quaerat itaque.</p>
-                    <h2 class="box-image-para-h2">VEROCINA KING</h2>
-                    <p class="box-image-para-h2-pa">Cook</p>
-                </div>
-                <div class=box-1><img class="box-image-1"
-                        src="https://lh3.googleusercontent.com/ogw/ADea4I6mrb1rGA6lhCMqHXF49KeVBiThXj2FfKiygddWfw=s32-c-mo"
-                        alt="profile-picture" />
-                    <p class="box-image-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit minima
-                        numquam alias voluptate
-                        quaerat itaque.</p>
-                    <h2 class="box-image-para-h2">VEROCINA KING</h2>
-                    <p class="box-image-para-h2-pa">Cook</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="strawberries">
-            <div class="div-sets">
-                <div class="strawberries-div-set"><img class="strawberries-img-set" src="./pictures/strawberries.jpg"
-                        alt="Strawberry"></div>
-                <div> <img class="strawberries-div-set-2" src="./pictures/sign-up-straw.jpg" />
-                    <div class="sign-up-div">
-                        <h2>Follow Us</h2>
-                        <p class="para-p-input">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur
-                            inventore dolores odit.</p>
-                        <input class="input-field" type="text" placeholder="Your Email" />
-                        <button class="btn-primary">Subscribe</button>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-        <div id="experience-filed">
-            <div class="experience-2nd-filed">
-                <div class="experience-div-container">
-                    <h2>7</h2>
-                    <p class="experience-para">Year of Experience</p>
-                </div>
-                <div class="experience-div-container">
-                    <h2>123K</h2>
-                    <p class="experience-para">Happy Customer</p>
-                </div>
-                <div class="experience-div-container">
-                    <h2>72K</h2>
-                    <p class="experience-para">100% satisfied</p>
-                </div>
-                <div class="experience-div-container">
-                    <h2>13K</h2>
-                    <p class="experience-para">Detox Smoothies</p>
-                </div>
-            </div>
-        </div>
-        <div id="whole-div">
-            <div class="video-div">
-                <div>
-                    <h2>Vimeo Video</h2>
-                </div>
-                <div class="video-main-div"><video controls>
-                        <source src="https://youtu.be/tEU9wlwyZ2Q"
-                            type="video/mp4">
-                        Your browser does not support the video element.
-                    </video></div>
-            </div>
-        </div>
-
-
-
-    </main>
-
-    <footer>
-        <div id="foter">
-            <div class="footer-divide">
-
-                <div id="contact-information">
-                    <h2 class="contact-heading">𝓜𝓮𝓮𝓽 𝓞𝓾𝓻 𝓣𝓮𝓪𝓶</h2>
-                    <h2 class="contact-heading-2">Get In Touch</h2>
-                    <p class="contact-para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, esse
-                        omnis.</p>
-
-
-                    <div id="input-fields">
-                        <input class="input-items" type="text" placeholder="Name" /><br>
-                        <input class="input-items" type="text" placeholder="Phone" /><br>
-                        <input class="input-items" type="text" placeholder="Subject" /><br>
-                        <input class="input-items" type="text" placeholder="E-mail" /><br>
-                        <textarea class="input-items-textarea" name="comment"
-                            for="userform">Enter text here...</textarea>
-                        <button class="btn-submit-footer">Submit Now</button>
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="address-Information">
-                    <h2 class=" contact-heading">𝓒𝓸𝓷𝓽𝓪𝓬𝓽 𝓤𝓼</h2>
-                    <h2 class="contact-heading-3">Address Information</h2>
-                    <p class="contatc-parag">Overeating is one of the most common cause of overweight and digestive
-                        problems.</p>
-                    <h2 class="contact-heading-london">London Store</h2>
-                    <p class="contatc-parag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur
-                        labore fugiat. Dicta,
-                        porro? Quas adipisci error voluptatum.</p>
-                    <h2 class="contact-heading-3">Berlin Store</h2>
-                    <p class="contatc-parag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit modi neque
-                        facilis animi odit
-                        alias omnis doloribus at.</p>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-</body>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
